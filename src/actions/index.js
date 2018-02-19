@@ -1,4 +1,4 @@
-export const add = () => {
+export const addRecipe = () => {
     return {
         type: 'ADD',
         addEdit: 1,

@@ -1,8 +1,17 @@
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { recipeReducer } from './reducers'
+import add from './reducers/add'
+import App from './components/App'
 
-const Func = () => (
-    <div> Hello World</div>
+let store = createStore(add)
+
+const RecipeBox = () => (
+    <Provider store={store}>
+        <App />
+    </Provider>
 )
 
-render(<Func />, document.getElementById('root'))
+render(<RecipeBox />, document.getElementById('root'))
