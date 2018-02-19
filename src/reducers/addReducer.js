@@ -21,7 +21,7 @@ const initialState = {
     ]
 }
 
-const add = (state = initialState, action) => {
+const addReducer = (state = initialState, action) => {
     switch(action.type) {
         case 'ADD':
             return state
@@ -30,4 +30,4 @@ const add = (state = initialState, action) => {
     }
 }
 
-export default add
+export default addReducer

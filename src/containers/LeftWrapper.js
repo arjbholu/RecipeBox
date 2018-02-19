@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { addRecipe } from '../actions'
 
 const mapStateToProps = (state) => {
-    // console.log(state)
+    console.log(state)
     return {
-        TotalData: state.TotalData
+        TotalData: state.addReducer.TotalData
     }
 }
 
