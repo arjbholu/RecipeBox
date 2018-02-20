@@ -5,12 +5,14 @@ import { createStore } from 'redux'
 import recipeReducer  from './reducers'
 // import add from './reducers/add'
 import App from './components/App'
+import Container from './containers/Container'
+
 
 let store = createStore(recipeReducer)
 
 const RecipeBox = () => (
     <Provider store={store}>
-        <App />
+        <Container />
     </Provider>
 )
 

@@ -1,4 +1,4 @@
-let id = 0
+let id = 1
 const initialState = {
     AddEdit: 0,
     Edit: 0,
@@ -23,8 +23,42 @@ const initialState = {
 
 const addReducer = (state = initialState, action) => {
     switch(action.type) {
+        case 'VIEW':
+            let Data = state.TotalData.find( Data => (Data.id == action.id))
+            return {
+                ...state,
+                AddEdit: 0,
+                CurrentData: Data
+            };
         case 'ADD':
-            return state
+            console.log('in Ddd')
+            return {
+                ...state,
+                CurrentData: {
+                    Title: '',
+                    Description: ''
+                },
+                AddEdit: 1
+            }
+        case 'SAVE':
+            Data = {
+                ...action.Data,
+                id: ++id
+            }
+            return {
+                ...state,
+                CurrentData: Data,
+                TotalData: [
+                    ...state.TotalData,
+                    Data
+                ],
+                AddEdit: 0
+            }
+        case 'EDIT':
+        return {
+            ...state,
+            AddEdit: 1
+        }
         default:
             return state
     }

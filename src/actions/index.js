@@ -1,8 +1,17 @@
-export const addRecipe = () => {
+export const add = () => {
     return {
         type: 'ADD',
         addEdit: 1,
         add: 1
+    }
+}
+
+export const view = (id) => {
+    return {
+        type: 'VIEW',
+        addEdit: 0,
+        id: id,
+        addEdit: 0
     }
 }
 
@@ -14,9 +23,10 @@ export const edit = () => {
     }
 }
 
-export const save = (data) => {
+export const save = (Data) => {
     return {
         type: 'SAVE',
-        data
+        addEdit: 0,
+        Data
     }
 }
