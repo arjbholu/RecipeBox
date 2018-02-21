@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Description = ({Data}) => {
+const Description = ({Data, editRecipe}) => {
     return (
-        <div> 
-            <div>{Data.Title}</div>
-            <div>{Data.Description}</div>
+        <div id="detail"> 
+            <div className="title">{Data.Title}</div>
+            <div className="discription">{Data.Description}</div>
+            <div className="edit"><button onClick={() => editRecipe()}>Edit</button></div>
         </div>
     )
 }

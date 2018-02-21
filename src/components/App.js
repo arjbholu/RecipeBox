@@ -5,13 +5,11 @@ import Description from './Description';
 // import LeftWrapper from '../containers/LeftWrapper'
 
 const App = ({TotalData, onClick, Data, AddEdit, addRecipe, saveRecipe, editRecipe}) => (
-    <div>
-        <RecipeList TotalData={TotalData} onClick={onClick} />
-        <button onClick={() => addRecipe()}>Add</button>
-        <button onClick={() => editRecipe()}>Edit</button>
+    <div id="wrapper">
+        <RecipeList TotalData={TotalData} onClick={onClick} addRecipe={addRecipe}/>
         {
             !AddEdit 
-            ? <Description Data={Data} />
+            ? <Description Data={Data} editRecipe={editRecipe} />
             : <AddEditComponent Data={Data} saveRecipe={saveRecipe} />
         }
     </div>

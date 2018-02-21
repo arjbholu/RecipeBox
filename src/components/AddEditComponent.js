@@ -27,16 +27,17 @@ class AddEditComponent extends Component {
             Title: this.state.Title,
             Description: this.state.Description
         }
-        this.state.onSubmit(Data)
+        if (this.state.Title != "" && this.state.Description != "")
+            this.state.onSubmit(Data)
     }
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.submitHandle}>
-                    <input type="text" onChange={this.changeTitle} value={this.state.Title}></input>
-                    <input type="text" onChange={this.changeDescription} value={this.state.Description}></input>
-                    <input type="submit" value="Save"></input>
+            <div >
+                <form className="addEdit"onSubmit={this.submitHandle}>
+                    <input className="title-addEdit" type="text" onChange={this.changeTitle} value={this.state.Title}></input>
+                    <textarea className="description-addEdit" type="text" onChange={this.changeDescription} value={this.state.Description}></textarea>
+                    <button className="save" type="submit">Save</button>
                 </form>
                 {/* Hello */}
             </div>

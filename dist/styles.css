@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#toggle {
+  width: 20vw;
+  height: 100vh;
+  background: hotpink;
+  padding: 0.7vw;
+  justify-content: center;
+}
+
+#detail {
+  width: 80vw;
+  height: 100vh;
+  background: lightblue;
+  padding: 0.7vw;
+  display: grid;
+  grid-template-column: 1fr 100px;
+  grid-template-row: 1fr 5fr;
+}
+
+input, textarea {
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 4px;
+  border: none;
+}
+
+.recipe-item:hover, .recipe-item:focus {
+  box-shadow: 0 1px 4px black;
+}
+
+.recipe-item {
+  padding: 4px;
+  margin-top: 20px;
+  border: 2px solid black;
+  text-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.title {
+  grid-column: 1 / 2;
+  grid-row: 1 / span 1;
+  justify-self: center;
+  font-weight: bold;
+  font-size: 3em;
+}
+.discription {
+  padding: 20px;
+  grid-column: 1 / 2;
+  grid-row: 3 / span 1;
+  align-self: start;
+}
+button {
+  margin-top: 5vh;
+  border-radius: 5%;
+  border: 2px solid black;
+  background: pink;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 0 1px 4px black;
+}
+
+.edit {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span1;
+  justify-self: center;
+}
+
+.addEdit {
+  width: 80vw;
+  height: 100vh;
+  background: lightblue;
+  padding: 0.7vw;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr 4fr;
+}
+
+.title-addEdit {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.description-addEdit {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  margin-top: 1em;
+}
+
+.save {
+  
+  width: 5vw;
+  height: 3vw;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
