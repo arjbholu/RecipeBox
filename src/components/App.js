@@ -5,7 +5,7 @@ import Description from './Description';
 // import LeftWrapper from '../containers/LeftWrapper'
 
 const App = ({TotalData, onClick, Data, AddEdit, addRecipe, saveRecipe, editRecipe}) => (
-    <div class="wrapper">
+    <div className="wrapper">
         <RecipeList TotalData={TotalData} onClick={onClick} addRecipe={addRecipe}/>
         {
             !AddEdit 

@@ -4,8 +4,9 @@ const initialState = {
     Edit: 0,
     Add: 1,
     CurrentData: {
-        Title: "ABC",
-        Description: "blah blah"
+        id: 0,
+        Title: "Pizza",
+        Description: "Blah Blah"
     },
     TotalData: [
         {
