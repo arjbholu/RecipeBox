@@ -33,14 +33,11 @@ class AddEditComponent extends Component {
 
     render() {
         return (
-            <div >
-                <form className="addEdit"onSubmit={this.submitHandle}>
-                    <input className="title-addEdit" type="text" onChange={this.changeTitle} value={this.state.Title}></input>
-                    <textarea className="description-addEdit" type="text" onChange={this.changeDescription} value={this.state.Description}></textarea>
-                    <button className="save" type="submit">Save</button>
-                </form>
-                {/* Hello */}
-            </div>
+            <form className="right"   onSubmit={this.submitHandle}>
+                <input className="title-edit" type="text" onChange={this.changeTitle} value={this.state.Title}></input>
+                <textarea className="description-edit" type="text" onChange={this.changeDescription} value={this.state.Description}></textarea>
+                <button className="save" type="submit">Save</button>
+            </form>
         )
     }
 }

@@ -55,10 +55,12 @@ const addReducer = (state = initialState, action) => {
                 AddEdit: 0
             }
         case 'EDIT':
-        return {
-            ...state,
-            AddEdit: 1
-        }
+            let TotalData = state.TotalData.filter((data) => data.id !== state.CurrentData.id)
+            return {
+                ...state,
+                TotalData: TotalData,
+                AddEdit: 1
+            }
         default:
             return state
     }

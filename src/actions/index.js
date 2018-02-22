@@ -15,11 +15,12 @@ export const view = (id) => {
     }
 }
 
-export const edit = () => {
+export const edit = (id) => {
     return {
         type: 'EDIT',
         addEdit: 1,
-        edit: 1
+        edit: 1,
+        id
     }
 }
 

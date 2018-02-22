@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
         onClick: (id) => dispatch(view(id)),
         addRecipe: () => dispatch(add()),
         saveRecipe: (Data) => dispatch(save(Data)),
-        editRecipe: () => dispatch(edit())
+        editRecipe: (id) => dispatch(edit(id))
     }
 }
 
