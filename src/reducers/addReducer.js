@@ -56,12 +56,26 @@ const addReducer = (state = initialState, action) => {
                 AddEdit: 0
             }
         case 'EDIT':
-            let TotalData = state.TotalData.filter((data) => data.id !== state.CurrentData.id)
+            let TotalDataEdit = state.TotalData.filter((data) => data.id !== state.CurrentData.id)
             return {
                 ...state,
-                TotalData: TotalData,
+                TotalData: TotalDataEdit,
                 AddEdit: 1
             }
+        case 'DELETE':
+            let TotalDataDelete = state.TotalData.filter((data) => data.id !== action.id)
+            let CurrentData = {
+                Title: "Select from list to view",
+                Description: "",
+                id: ""
+            }
+            // console.log(Tot)
+            return {
+                ...state,
+                TotalData: TotalDataDelete,
+                CurrentData: CurrentData,
+                AddEdit: 0
+            } 
         default:
             return state
     }

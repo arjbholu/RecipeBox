@@ -31,3 +31,11 @@ export const save = (Data) => {
         Data
     }
 }
+
+export const deletee = (id) => {
+    return {
+        type: 'DELETE',
+        addEdit: 0,
+        id
+    }
+}

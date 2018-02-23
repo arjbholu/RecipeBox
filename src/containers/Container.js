@@ -1,9 +1,9 @@
 import App from '../components/App'
 import { connect } from 'react-redux'
-import { view, add, save, edit } from '../actions'
+import { view, add, save, edit, deletee } from '../actions'
 
 const mapStateToProps = (state) => {
-    // console.log(state)
+    console.log(state)
     return {
         TotalData: state.addReducer.TotalData,
         Data: state.addReducer.CurrentData,
@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
         onClick: (id) => dispatch(view(id)),
         addRecipe: () => dispatch(add()),
         saveRecipe: (Data) => dispatch(save(Data)),
-        editRecipe: (id) => dispatch(edit(id))
+        editRecipe: (id) => dispatch(edit(id)),
+        deleteRecipe: (id) => dispatch(deletee(id))
     }
 }
 

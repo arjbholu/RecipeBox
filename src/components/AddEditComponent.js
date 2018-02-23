@@ -6,7 +6,8 @@ class AddEditComponent extends Component {
         this.state = {
             Title: props.Data.Title,
             Description: props.Data.Description,
-            onSubmit: props.saveRecipe
+            onSubmit: props.saveRecipe,
+            id: props.Data.id
         }
         this.changeTitle = this.changeTitle.bind(this)
         this.changeDescription = this.changeDescription.bind(this)
@@ -25,7 +26,8 @@ class AddEditComponent extends Component {
         event.preventDefault()
         let Data = {
             Title: this.state.Title,
-            Description: this.state.Description
+            Description: this.state.Description,
+            id: this.state.id
         }
         if (this.state.Title != "" && this.state.Description != "")
             this.state.onSubmit(Data)
