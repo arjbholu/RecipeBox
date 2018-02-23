@@ -42,29 +42,51 @@ const addReducer = (state = initialState, action) => {
                 AddEdit: 1
             }
         case 'SAVE':
-            Data = {
-                ...action.Data,
+            console.log(action.Data)
+            let SaveData = {
+                id: action.Data.id,
+                Title: action.Data.Title,
+                Description: action.Data.Description
+            }
+            let CurrentData
+            if (action.Data.Edit) {
+                state.TotalData.forEach(element => {
+                    if(element.id === SaveData.id) {
+                        element.Title = SaveData.Title
+                        element.Description = SaveData.Description
+                        CurrentData = element
+                    }
+                });
+                return  {
+                    ...state,
+                    CurrentData: CurrentData,
+                    AddEdit: 0
+                }
+            }
+            SaveData = {
+                ...SaveData,
                 id: ++id
             }
+            console.log(SaveData)
             return {
                 ...state,
-                CurrentData: Data,
+                CurrentData: SaveData,
                 TotalData: [
                     ...state.TotalData,
-                    Data
+                    SaveData
                 ],
                 AddEdit: 0
             }
         case 'EDIT':
-            let TotalDataEdit = state.TotalData.filter((data) => data.id !== state.CurrentData.id)
+            // let TotalDataEdit = state.TotalData.filter((data) => data.id !== state.CurrentData.id)
             return {
                 ...state,
-                TotalData: TotalDataEdit,
-                AddEdit: 1
+                AddEdit: 1,
+                Edit: 1
             }
         case 'DELETE':
             let TotalDataDelete = state.TotalData.filter((data) => data.id !== action.id)
-            let CurrentData = {
+            CurrentData = {
                 Title: "Select from list to view",
                 Description: "",
                 id: ""

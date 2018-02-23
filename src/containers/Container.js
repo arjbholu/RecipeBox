@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
     return {
         TotalData: state.addReducer.TotalData,
         Data: state.addReducer.CurrentData,
-        AddEdit: state.addReducer.AddEdit
+        AddEdit: state.addReducer.AddEdit,
+        Edit: state.addReducer.Edit
     }
 }
 

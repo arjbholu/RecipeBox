@@ -2,7 +2,7 @@ import React from 'react'
 import Description from './Description'
 import AddEditComponent from './AddEditComponent'
 
-const RecipeList = ({TotalData, onClick, addRecipe, deleteRecipe}) => {
+const RecipeList = ({TotalData, onClick, addRecipe, deleteRecipe, editRecipe}) => {
     // console.log(TotalData)
     return (
         <div className="left">
